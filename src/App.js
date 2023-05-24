@@ -2,7 +2,6 @@ import * as React from 'react';
 import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
 import { useState } from 'react';
 import Box from '@mui/joy/Box';
-import Sheet from '@mui/joy/Sheet';
 import Switch from '@mui/joy/Switch';
 import Divider from '@mui/joy/Divider';
 import List from '@mui/joy/List';
@@ -17,11 +16,9 @@ import {InputDecorators} from './componentes/inputD';
 import colors from '@mui/joy/colors/colors.js';
 
 
-//Modo obscuro | claro
-function Cambiocolor(){
-  const{ mode, setMode}= useColorScheme();
 
-}
+//Modo obscuro | claro
+
 function ModeSwitcher() {
   const { mode, setMode } = useColorScheme();
   const [mounted, setMounted] = React.useState(false);
@@ -43,6 +40,7 @@ function ModeSwitcher() {
       </Switch>
   );
 }
+
 
 //Red para ordenar
 function SpacingGrid() {
@@ -89,7 +87,7 @@ export default function ColorPicker() {
     }}
   >
 
-    <ModeSwitcher />
+    <ModeSwitcher/>
       <input type="color" value={color} onChange={handleColorChange} />
       <h1>Paleta de colores</h1>
       <div>
@@ -118,7 +116,7 @@ export default function ColorPicker() {
             <Grid item xs={3.5}>
               <Grid container justifyContent="center">
                 <List>
-                  <Botonnorm/>
+                  <Botonnorm />
                 </List>
                 <List>
                   <SwitchControlled/>
@@ -151,6 +149,7 @@ export default function ColorPicker() {
 
         <Divider style={{margin:20}}/>
             <InputDecorators/>
+       
  
     
 
@@ -159,6 +158,8 @@ export default function ColorPicker() {
     </CssVarsProvider>
     
     </div>
+
+    
 
         
   );
