@@ -14,6 +14,7 @@ import {RadioButtons} from './componentes/radiobot';
 import {ButtonIcons} from './componentes/botonicon';
 import {InputDecorators} from './componentes/inputD';
 import colors from '@mui/joy/colors/colors.js';
+import { BorderAllOutlined } from '@mui/icons-material';
 
 
 
@@ -59,12 +60,12 @@ function SpacingGrid() {
 
 const Cuadrospalette = () => {
   const colors = {
-    blue: ['#005b96', '#0278ae', '#039fb8', '#04c4d9', '#0be2f0', '#0cf0ff'],
-    purple: ['#400080', '#5100a8', '#6300d4', '#7500ff', '#9700ff', '#b900ff'],
-    grey: ['#333333', '#4f4f4f', '#6b6b6b', '#878787', '#a3a3a3', '#bfbfbf'],
-    yellow: ['#ffd700', '#ffdd00', '#ffe400', '#ffeb00', '#fff200', '#fff900'],
-    red: ['#a80000', '#c40000', '#e10000', '#ff0000', '#ff1919', '#ff3333'],
-    green: ['#008000', '#009900', '#00b200', '#00cc00', '#00e500', '#00ff00'],
+    blue: ['#00153C','#072859','#02367D','#054DA7','#096BDE','#3990FF','#6FB6FF','#ADDBFF','#DDF1FF','#F4FAFF'],
+    purple: ['#1D0A42','#301761','#452382','#5F35AE','#814DDE','#A374F9','#C69EFF','#E1CBFF','#F4EAFF','#FDF7FF'],
+    grey: ['#131318','#25252D','#434356','#5A5A72','#73738C','#8F8FA3','#B9B9C6','#D8D8DF','#EBEBEF','#F7F7F8'],
+    yellow: ['#3B2300','#4D2D00','#633C01','#7D4E00','#9A6700','#BF8700','#D4A72C','#EAC54F','#FAE17D','#FFF8C5'],
+    red: ['#39000D','#580013','#77061B','#A10E25','#D3232F','#FA5255','#FF9192','#FFC7C5','#FFE9E8','#FFF8F6'],
+    green: ['#001D09','#002F0F','#034318','#0F5D26','#1A7D36','#2CA24D','#4CC76E','#77EC95','#D7F5DD','#F3FEF5'],
   };
 
   const [color, setColor] = useState('blue');
@@ -82,36 +83,59 @@ const Cuadrospalette = () => {
       <input type="color" value={colors[color][0]} onChange={handleColorChange} />
       <h1>Paleta de colores</h1>
       <div>
-        <button style={{ backgroundColor: colors.blue[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('blue')}>
-          Primario
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('blue')}>
+          Primary
         </button>
-        <button style={{ backgroundColor: colors.purple[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('purple')}>
-          Secundario
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('purple')}>
+          Secondary
         </button>
-        <button style={{ backgroundColor: colors.grey[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('grey')}>
-          Neutro
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('grey')}>
+          Neutral
         </button>
-        <button style={{ backgroundColor: colors.yellow[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('yellow')}>
-          Advertencia
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('green')}>
+          Success
         </button>
-        <button style={{ backgroundColor: colors.red[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('red')}>
-          Peligro
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('yellow')}>
+          Alert
         </button>
-        <button style={{ backgroundColor: colors.green[700], margin: 10, borderRadius: 20 }} onClick={() => changeColor('green')}>
-          Éxito
+        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('red')}>
+          Danger
         </button>
       </div>
       <Box display="flex" flexWrap="wrap">
         {colors[color].map((colorCode, index) => (
           <Box
             key={index}
-            width="100px"
-            height="100px"
+            width="120px"
+            height="70px"
             backgroundColor={colorCode}
-            margin="10px"
+            borderRadius={10}
           />
         ))}
       </Box>
+    
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+  {colors[color].map((colorCode, index) => (
+    
+    <div
+      key={index}
+      style={{
+        backgroundColor: '#FFF', // Cambiar el fondo a negro o cualquier otro color deseado
+        color: '#000',
+        width: '120px',
+        height: '70px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: '10px',
+      }}
+    >
+      {colorCode}
+    </div>
+    
+
+        ))}
+      </div>
     </div>
   );
 };
