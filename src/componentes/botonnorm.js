@@ -4,11 +4,12 @@ import Typography from '@mui/joy/Typography';
 import Divider from '@mui/joy/Divider';
 import List from '@mui/joy/List';
 import ListItem from '@mui/joy/ListItem';
+import { useContext } from 'react';
 
-//funcion colores
-// color=useTheme{{vars.palette.colores.mainchannel}}
 
-export const Botonnorm = () => {
+
+export const Botonnorm = ({}) => {
+
   return (
     <List>
     <Typography level="body2" justifySelf="flex-end">
