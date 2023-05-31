@@ -73,63 +73,62 @@ const Network = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100vh' }}>
-      <div style={{ flex: '35%' }}>
-        <label>
-          Size:
-          <select onChange={handleSizeChange}>
-            <option value="Sm">Sm</option>
-            <option value="Md">Md</option>
-            <option value="Lg">Lg</option>
+    <div style={{ display: 'flex', flexDirection: 'row'}}>
+      <div style={{display:'flex', flexDirection:'column'}} >
+        <p>Size</p>
+        <Box width={350} border={1} borderRadius={10} margin={1}>
+        <label sx={{with:100}}>
+          <select onChange={handleSizeChange}  style={{ height:16, width: 300}} >
+            <option>Sm</option>
+            <option>Md</option>
+            <option>Lg</option>
           </select>
         </label>
-      </div>
-      <div style={{ flex: '50%' }}>
-        <label>
-          Left:
-          <input type="number" onChange={handlePixelChange} />
+        </Box>
+        </div>
+     <div style={{display:'flex', flexDirection:'column'}} >
+      <p>Padding</p>
+      <div style={{ display: 'flex', flexDirection: 'row'}}>
+        <Box style={{display:'flex', flexDirection:'row'}} width={100}  border={1} borderRadius={10} margin={1}>
+          <p>left</p>
+          <Divider orientation='vertical' style={{margin:5}}/>
+          <label>
+          <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
         </label>
-        <label>
-          Top:
-          <input type="number" onChange={handlePixelChange} />
+        </Box>
+        <Box style={{display:'flex', flexDirection:'row'}} width={100} border={1} borderRadius={10} margin={1}>
+          <p>Top</p>
+          <Divider orientation='vertical' style={{margin:5}}/>
+          <label>
+          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
         </label>
-        <label>
-          Right:
-          <input type="number" onChange={handlePixelChange} />
+        </Box>
+        <Box style={{display:'flex', flexDirection:'row'}} border={1} width={100} borderRadius={10} margin={1}>
+          <p>Right</p>
+          <Divider orientation='vertical' style={{margin:5}}/>
+          <label>
+          <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
         </label>
-        <label>
-          Bottom:
-          <input type="number" onChange={handlePixelChange} />
+        </Box>
+        <Box style={{display:'flex', flexDirection:'row'}}width={100}  border={1} borderRadius={10} margin={1}>
+          <p>Bottom</p>
+          <Divider orientation='vertical' style={{margin:5}}/>
+          <label>
+          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
         </label>
-      </div>
-      <div style={{ flex: '15%' }}>
-        <label>
-          Border:
-          <input type="number" onChange={handlePixelChange} />
+        </Box>
+        </div>
+        </div>
+      <Box style={{display:'flex', flexDirection:'row'}} width={100} border={1} borderRadius={10} margin={1}>
+          <p>Border</p>
+          <Divider orientation='vertical' style={{margin:5}}/>
+          <label>
+          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}}/>
         </label>
-      </div>
+        </Box>
     </div>
   );
 };
-// const SizeInput = () => {
-//   const [size, setSize] = useState('');
-
-//   const handleSizeChange = (event) => {
-//     setSize(event.target.value);
-//   };
-
-//   return (
-//     <div sx={{margin:10}}>
-//       <label>
-//         <select value={size} onChange={handleSizeChange}>
-//           <option value="small">Sm</option>
-//           <option value="medium">Mm</option>
-//           <option value="large">Lg</option>
-//         </select>
-//       </label>
-//     </div>
-//   );
-// };
 
 
 const Cuadrospalette = () => {
@@ -251,13 +250,9 @@ export default function ColorPicker() {
     <ModeSwitcher/>
 
       <Cuadrospalette/>
-      <Grid item xs={12} border={1}>
-  <Grid container justifyContent="center">
-   
-   {/* <SizeInput/> */}
+ 
    <Network/>
-  </Grid>
-</Grid>
+
       <Grid sx={{ flexGrow: 2 }} container>
 
             <Grid item xs={3.5}>
