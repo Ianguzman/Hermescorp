@@ -1,4 +1,5 @@
 import * as React from 'react'; 
+import './Style.css';
 import { CssVarsProvider, useColorScheme } from '@mui/joy/styles';
 import { useState } from 'react';
 import Box from '@mui/joy/Box';
@@ -16,6 +17,8 @@ import {InputDecorators} from './componentes/inputD';
 import colors from '@mui/joy/colors/colors.js';
 import { BorderAllOutlined } from '@mui/icons-material';
 import { Button } from '@mui/joy';
+import { Network } from './componentes/tamaños';
+import { Lostokens } from './componentes/tokens';
 
 
 
@@ -45,100 +48,81 @@ function ModeSwitcher() {
 }
 
 
-//Red para ordenar
-function SpacingGrid() {
-  const [spacing, setSpacing] = React.useState(2);
-
-  const handleChange = (event) => {
-    setSpacing(Number(event.target.value));
-  };
-
-  const jsx = `
-<Grid container spacing={${spacing}}>
-`;
-
-  
-}
-const Network = () => {
-  const handleSizeChange = (event) => {
-    // Lógica para manejar el cambio de tamaño
-    const size = event.target.value;
-    console.log('Selected size:', size);
-  };
-
-  const handlePixelChange = (event) => {
-    // Lógica para manejar el cambio de píxeles
-    const pixels = event.target.value;
-    console.log('Selected pixels:', pixels);
-  };
-
-  return (
-    <div style={{ display: 'flex', flexDirection: 'row'}}>
-      <div style={{display:'flex', flexDirection:'column'}} >
-        <p>Size</p>
-        <Box width={350} border={1} borderRadius={10} margin={1}>
-        <label sx={{with:100}}>
-          <select onChange={handleSizeChange}  style={{ height:16, width: 300}} >
-            <option>Sm</option>
-            <option>Md</option>
-            <option>Lg</option>
-          </select>
-        </label>
-        </Box>
-        </div>
-     <div style={{display:'flex', flexDirection:'column'}} >
-      <p>Padding</p>
-      <div style={{ display: 'flex', flexDirection: 'row'}}>
-        <Box style={{display:'flex', flexDirection:'row'}} width={100}  border={1} borderRadius={10} margin={1}>
-          <p>left</p>
-          <Divider orientation='vertical' style={{margin:5}}/>
-          <label>
-          <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
-        </label>
-        </Box>
-        <Box style={{display:'flex', flexDirection:'row'}} width={100} border={1} borderRadius={10} margin={1}>
-          <p>Top</p>
-          <Divider orientation='vertical' style={{margin:5}}/>
-          <label>
-          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
-        </label>
-        </Box>
-        <Box style={{display:'flex', flexDirection:'row'}} border={1} width={100} borderRadius={10} margin={1}>
-          <p>Right</p>
-          <Divider orientation='vertical' style={{margin:5}}/>
-          <label>
-          <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
-        </label>
-        </Box>
-        <Box style={{display:'flex', flexDirection:'row'}}width={100}  border={1} borderRadius={10} margin={1}>
-          <p>Bottom</p>
-          <Divider orientation='vertical' style={{margin:5}}/>
-          <label>
-          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
-        </label>
-        </Box>
-        </div>
-        </div>
-      <Box style={{display:'flex', flexDirection:'row'}} width={100} border={1} borderRadius={10} margin={1}>
-          <p>Border</p>
-          <Divider orientation='vertical' style={{margin:5}}/>
-          <label>
-          <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}}/>
-        </label>
-        </Box>
-    </div>
-  );
-};
-
 
 const Cuadrospalette = () => {
   const colors = {
-    blue: ['#00153C','#072859','#02367D','#054DA7','#096BDE','#3990FF','#6FB6FF','#ADDBFF','#DDF1FF','#F4FAFF'],
-    purple: ['#1D0A42','#301761','#452382','#5F35AE','#814DDE','#A374F9','#C69EFF','#E1CBFF','#F4EAFF','#FDF7FF'],
-    grey: ['#131318','#25252D','#434356','#5A5A72','#73738C','#8F8FA3','#B9B9C6','#D8D8DF','#EBEBEF','#F7F7F8'],
-    yellow: ['#3B2300','#4D2D00','#633C01','#7D4E00','#9A6700','#BF8700','#D4A72C','#EAC54F','#FAE17D','#FFF8C5'],
-    red: ['#39000D','#580013','#77061B','#A10E25','#D3232F','#FA5255','#FF9192','#FFC7C5','#FFE9E8','#FFF8F6'],
-    green: ['#001D09','#002F0F','#034318','#0F5D26','#1A7D36','#2CA24D','#4CC76E','#77EC95','#D7F5DD','#F3FEF5'],
+    grey: {
+      50: '#F7F7F8',
+      100: '#EBEBEF',
+      200: '#D8D8DF',
+      300: '#B9B9C6',
+      400: '#8F8FA3',
+      500: '#73738C',
+      600: '#5A5A72',
+      700: '#434356',
+      800: '#25252D',
+      900: '#131318'
+    },
+    blue: {
+      50: '#F4FAFF',
+      100: '#DDF1FF',
+      200: '#ADDBFF',
+      300: '#6FB6FF',
+      400: '#3990FF',
+      500: '#096BDE',
+      600: '#054DA7',
+      700: '#02367D',
+      800: '#072859',
+      900: '#00153C'
+    },
+    yellow: {
+      50: '#FFF8C5',
+      100: '#FAE17D',
+      200: '#EAC54F',
+      300: '#D4A72C',
+      400: '#BF8700',
+      500: '#9A6700',
+      600: '#7D4E00',
+      700: '#633C01',
+      800: '#4D2D00',
+      900: '#3B2300'
+    },
+    red: {
+      50: '#FFF8F6',
+      100: '#FFE9E8',
+      200: '#FFC7C5',
+      300: '#FF9192',
+      400: '#FA5255',
+      500: '#D3232F',
+      600: '#A10E25',
+      700: '#77061B',
+      800: '#580013',
+      900: '#39000D'
+    },
+    green: {
+      50: '#F3FEF5',
+      100: '#D7F5DD',
+      200: '#77EC95',
+      300: '#4CC76E',
+      400: '#2CA24D',
+      500: '#1A7D36',
+      600: '#0F5D26',
+      700: '#034318',
+      800: '#002F0F',
+      900: '#001D09'
+    },
+    purple: {
+      50: '#FDF7FF',
+      100: '#F4EAFF',
+      200: '#E1CBFF',
+      300: '#C69EFF',
+      400: '#A374F9',
+      500: '#814DDE',
+      600: '#5F35AE',
+      700: '#452382',
+      800: '#301761',
+      900: '#1D0A42'
+    }
   };
 
 
@@ -160,28 +144,32 @@ const Cuadrospalette = () => {
       <input type="color" value={colors[color][0]} onChange={handleColorChange} />
     
       <div>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('blue')}>
+        <Button variant="soft"  style={{  margin: 10, borderRadius: 7 }} onClick={() => changeColor('blue')}>
           Primary
-        </button>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('purple')}>
+        </Button>
+        <Button variant="soft" color={color[900]} style={{ Color: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('purple')}>
           Secondary
-        </button>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('grey')}>
+        </Button>
+        <Button variant="soft" style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('grey')}>
           Neutral
-        </button>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('green')}>
+        </Button>
+        <Button variant="soft" style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('green')}>
           Success
-        </button>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('yellow')}>
+        </Button>
+        <Button variant="soft" style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('yellow')}>
           Alert
-        </button>
-        <button style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('red')}>
+        </Button>
+        <Button variant="soft" style={{ backgroundColor: colors, margin: 10, borderRadius: 7 }} onClick={() => changeColor('red')}>
           Danger
-        </button>
+        </Button>
         
       </div>
       <Box display="flex" flexWrap="wrap">
-        {colors[color].map((colorCode, index) => (
+      if (Array.isArray(colors[color])) {
+  colors[color].map(((colorCode, index)) => {
+    // Your code logic here
+ 
+       
           <Box
             key={index}
             width="120px"
@@ -189,9 +177,11 @@ const Cuadrospalette = () => {
             backgroundColor={colorCode}
             borderRadius={10}
           />
-        ))}
-      </Box>
-    
+  }
+  else{
+  <p>nada</p>
+  })};
+  </Box>  
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
   {colors[color].map((colorCode, index) => (
     
@@ -252,6 +242,7 @@ export default function ColorPicker() {
       <Cuadrospalette/>
  
    <Network/>
+    <Lostokens/>
 
       <Grid sx={{ flexGrow: 2 }} container>
 
