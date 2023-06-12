@@ -31,35 +31,35 @@ export const Network = () => {
      <div style={{display:'flex', flexDirection:'column'}} >
       <p>Padding</p>
       <div style={{ display: 'flex', flexDirection: 'row'}}>
-        <Box style={{display:'flex', flexDirection:'row'}} width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'}>
+        <Box style={{display:'flex', flexDirection:'row'}} width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'} justifyContent={'center'}>
           <p>left</p>
           <Divider orientation='vertical' style={{margin:5}}/>
           <label>
           <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
         </label>
         </Box>
-        <Box style={{display:'flex', flexDirection:'row'}} width={130} border={1} borderRadius={10} margin={1}>
+        <Box style={{display:'flex', flexDirection:'row'}} width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'} justifyContent={'center'}>
           <p>Top</p>
           <Divider orientation='vertical' style={{margin:5}}/>
           <label>
           <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
         </label>
         </Box>
-        <Box style={{display:'flex', flexDirection:'row'}} border={1} width={130} borderRadius={10} margin={1}>
+        <Box style={{display:'flex', flexDirection:'row'}} width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'} justifyContent={'center'}>
           <p>Right</p>
           <Divider orientation='vertical' style={{margin:5}}/>
           <label>
           <input type="number" onChange={handlePixelChange}  style={{ height:16, width: 50}}/>
         </label>
         </Box>
-        <Box style={{display:'flex', flexDirection:'row'}}width={130}  border={1} borderRadius={10} margin={1}>
+        <Box style={{display:'flex', flexDirection:'row'}}width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'} justifyContent={'center'}>
           <p>Bottom</p>
           <Divider orientation='vertical' style={{margin:5}}/>
           <label>
           <input type="number" onChange={handlePixelChange} style={{ height:16, width: 50}} />
         </label>
         </Box>
-        <Box style={{display:'flex', flexDirection:'row'}} width={130} border={1} borderRadius={10} margin={1}>
+        <Box style={{display:'flex', flexDirection:'row'}} width={130} height={50}  border={1} borderRadius={10} margin={1} alignItems={'center'} justifyContent={'center'}>
           <p>Border</p>
           <Divider orientation='vertical' style={{margin:5}}/>
           <label>
