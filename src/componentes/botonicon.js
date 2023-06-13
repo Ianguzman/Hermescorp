@@ -20,15 +20,15 @@ export function ButtonIcons() {
             Button extra
           </Typography>
           <ListItem>
-            <Button variant="solid" color="neutral">Button</Button>
+            <Button variant="solid" color="primary">Button</Button>
           <Divider orientation='vertical'style={{margin:10}}/>
             <Button startDecorator={<Add />}>Add to cart</Button>
             <Divider orientation='vertical'style={{margin:10}}/>
-            <Button variant="soft" endDecorator={<KeyboardArrowRight />} color="success">
+            <Button variant="soft" endDecorator={<KeyboardArrowRight />} color="primary">
             Checkout:
             </Button>
             <Divider orientation='vertical'style={{margin:10}}/>
-            <Button aria-label="Like" variant="outlined" color="neutral">   
+            <Button aria-label="Like" variant="outlined" color="primary">   
             <ThumbUp />
             </Button>
           </ListItem>

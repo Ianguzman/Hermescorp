@@ -13,22 +13,22 @@ export const Inputnorm = () => {
         Input
       </Typography>
         <ListItem>
-          <Input placeholder="Solid" variant="solid" size='sm'/>
+          <Input placeholder="Solid" variant="solid" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Soft" variant="soft" size='sm' />
+          <Input placeholder="Soft" variant="soft" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Outlined" variant="outlined" size='sm' />
+          <Input placeholder="Outlined" variant="outlined" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Plain" variant="plain" size='sm' />
+          <Input placeholder="Plain" variant="plain" size='sm' color='primary'/>
         </ListItem>
         <ListItem>
-          <Input placeholder="Disabled Solid" disabled variant="solid" size='sm' />
+          <Input placeholder="Disabled Solid" disabled variant="solid" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Disabled Soft" disabled variant="soft" size='sm' />
+          <Input placeholder="Disabled Soft" disabled variant="soft" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Disabled Outlined" disabled variant="outlined" size='sm' />
+          <Input placeholder="Disabled Outlined" disabled variant="outlined" size='sm' color='primary'/>
           <Divider orientation='vertical'style={{margin:10}}/>
-          <Input placeholder="Disabled Plain" disabled variant="plain" size='sm' sx={{mr:-15}} />
+          <Input placeholder="Disabled Plain" disabled variant="plain" size='sm' sx={{mr:-15}} color='primary'/>
         </ListItem>
         <Divider style={{margin:20}}/>
     </List> 
